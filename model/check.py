@@ -2,8 +2,8 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
-MODEL = "tf_model/model_float32.tflite"
-IMAGE = "test.jpg"
+MODEL = "model/models/agrox_model.tflite"
+IMAGE = "model/test.jpg"
 
 classes = [
     "Alternaria",
