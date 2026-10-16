@@ -82,6 +82,8 @@ async def predict(file: UploadFile = File(...)):
             output_details[0]["index"]
         )[0]
 
+        output = tf.nn.softmax(output).numpy()
+
         # Get prediction and confidence
         prediction = int(np.argmax(output))
         confidence = float(np.max(output)) * 100
