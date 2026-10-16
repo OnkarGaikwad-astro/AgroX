@@ -126,15 +126,21 @@ try:
     # =========================
 
     if tflite_file:
-        output_path = "model/models/agrox_model.tflite"
+        output_path1 = "model/models/agrox_model.tflite"
+        output_path2 = "model/agrox_api/agrox_model.tflite"
         shutil.copy2(
             tflite_file,
-            output_path
+            output_path1
+        )
+        shutil.copy2(
+            tflite_file,
+            output_path2
         )
         print()
         print("================================")
         print("✅ TFLite model created!")
-        print(f"📦 {output_path}")
+        print(f"📦 {output_path1}")
+        print(f"📦 {output_path2}")
         print("================================")
 
     else:

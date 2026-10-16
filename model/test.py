@@ -1,6 +1,7 @@
 import tensorflow as tf
 import numpy as np
 from PIL import Image
+import torch
 
 MODEL = "model/models/agrox_model.tflite"
 IMAGE = "model/test.jpg"
@@ -33,4 +34,5 @@ output = interpreter.get_tensor(output_details[0]["index"])[0]
 prediction = np.argmax(output)
 
 print("Prediction:", classes[prediction])
+print(f"Confidence: {torch.max(torch.softmax(torch.tensor(output),dim=-1)).item() * 100:.2f} %")
 print("Scores:", output)
