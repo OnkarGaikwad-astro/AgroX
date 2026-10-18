@@ -60,10 +60,7 @@ def home():
 def health():
     return {
         "status": "healthy",
-        "model": "agrox_model.tflite",
-        "input_shape": list(expected_shape),
-        "output_shape": output_details[0]["shape"].tolist(),
-        "classes": classes
+        "message": "AgroX API is running"
     }
 
 
