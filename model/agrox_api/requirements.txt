@@ -1,5 +1,6 @@
 fastapi
-tensorflow
+uvicorn
+python-multipart
 numpy
 Pillow
-python-multipart
+ai-edge-litert==2.1.3
