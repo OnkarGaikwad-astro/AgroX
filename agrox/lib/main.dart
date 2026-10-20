@@ -1,4 +1,8 @@
+import 'package:agrox/homePage.dart';
+import 'package:agrox/rootpage.dart';
+import 'package:agrox/tools/colorTheme.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,15 +14,15 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.teal,
+      theme: ThemeData(
+        useMaterial3: true,
+        textTheme: GoogleFonts.josefinSansTextTheme(
+          Theme.of(context).textTheme,
         ),
-        body: Center(
-          child: Text('Hello Onkar!'),
-        ),
+        scaffoldBackgroundColor: kBackground
       ),
+      debugShowCheckedModeBanner: false,
+      home:Rootpage(username:"Onkar")
     );
   }
 }

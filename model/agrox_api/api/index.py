@@ -8,15 +8,11 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 
 app = FastAPI(title="AgroX Disease Detection API")
 
-
-# Model path
 MODEL = str(
     Path(__file__).resolve().parent.parent
     / "agrox_model.tflite"
 )
 
-
-# Class names in training index order
 classes = [
     "Alternaria",
     "Anthracnose",
@@ -25,16 +21,12 @@ classes = [
     "Healthy"
 ]
 
-
-# Load the model once when the application starts
 interpreter = Interpreter(model_path=MODEL)
 interpreter.allocate_tensors()
 
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
-
-# Verify model input metadata
 expected_shape = tuple(input_details[0]["shape"])
 input_dtype = input_details[0]["dtype"]
 
