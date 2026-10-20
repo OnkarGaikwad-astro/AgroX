@@ -18,17 +18,72 @@ class _HomepageState extends State<Homepage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 25, left: 25, bottom: 0),
+              padding: const EdgeInsets.only(top: 15, left: 25, bottom: 10),
               child: Container(
-                child: Align(
-                  alignment: AlignmentGeometry.topLeft,
-                  child: Text(
-                    "Hello, ${widget.username} !",
-                    style: GoogleFonts.dancingScript(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w700,
-                      color: kAccentVariant,
+                child: Row(
+                  children: [
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        "Hi,",
+                        style: TextStyle(color: Colors.white),
+                      ),
                     ),
+                    Align(
+                      alignment: Alignment.topLeft,
+                      child: Text(
+                        " ${widget.username} !",
+                        style: GoogleFonts.josefinSans(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w300,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 17.0, bottom: 5),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  // height: 130,
+                  // width: 200,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: const Color.fromARGB(33, 255, 255, 255),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 8.0,
+                          top: 4,
+                          bottom: 4,
+                        ),
+                        child: Text(
+                          "Today's Schedule :",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 15.0,
+                          bottom: 6,
+                          right: 5,
+                        ),
+                        child: Text(
+                          "7:30 - Weedicide \n13:00 - Fungicide \n16:30 - 17:30 - Watering plants \n19:30 - Fertilizer",
+                          style: TextStyle(color: kAccentVariant, fontSize: 12),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -192,23 +247,32 @@ class _HomepageState extends State<Homepage> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    height: 130,
+                    height: 100,
                     width: 170,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: kMint,
+                      color: const Color.fromARGB(223, 87, 190, 221),
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Container(decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(10)),child: Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: Icon(Icons.shopping_cart,size: 40,),
-                        )),
                         Padding(
                           padding: const EdgeInsets.all(5.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: kLemon,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Icon(Icons.shopping_cart, size: 40),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(6.0),
                           child: Text("Market Prices"),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -216,38 +280,36 @@ class _HomepageState extends State<Homepage> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-                    height: 130,
+                    height: 100,
                     width: 170,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: kMint,
+                      color: const Color.fromARGB(223, 82, 179, 208),
                     ),
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    height: 130,
-                    width: 170,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: kMint,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    height: 130,
-                    width: 170,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: kMint,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: kLemon,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Icon(
+                                Icons.calendar_month_outlined,
+                                size: 40,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Text("Schedule"),
+                        ),
+                      ],
                     ),
                   ),
                 ),
